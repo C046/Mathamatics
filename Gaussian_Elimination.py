@@ -19,6 +19,7 @@ class Gaussian:
             self.matrix = np.column_stack(Tuple)
         else:
             self.matrix = self._imatrix_()
+
     def is_nested(self, array):
         # check if list is nested
         if type(array) == type([]):
@@ -26,12 +27,12 @@ class Gaussian:
         # check if array is nested
         if type(array) == type(np.asanyarray([])):
             return any(isinstance(elem, np.asanyarray([]).__class__) for elem in array)
-    
+
     def swap_rows(self,row_one,row_two):
         def return_count(row):
             self.zero_count = list(row).count(0)
             return self.zero_count
-        
+
         # Check if 0 is not in row_one
         if 0 not in row_one:
             pass # No zeros found, continue without any action
@@ -44,7 +45,7 @@ class Gaussian:
                 else:
                     pass # Non-zero element, continue iteration
             x1_count = self.zero_count # Store the count of zeros in x1_count
-        
+
         # Check if 0 is not in row_two
         if 0 not in row_two:
             pass # No zeros found, continue without any action
@@ -57,7 +58,7 @@ class Gaussian:
                 else:
                     pass # Non-zero element, continue iteration
             x2_count = self.zero_count # Store the count of zeros in x2_count
-        
+
         # Compare the counts of zeros and perform row swaps
         if x1_count == None:
             # insert seperate logic for row operations
