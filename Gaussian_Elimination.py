@@ -31,24 +31,34 @@ class Gaussian:
         def return_count(row):
             self.zero_count = list(row).count(0)
             return self.zero_count
+        
+        # Check if 0 is not in row_one
         if 0 not in row_one:
-            pass
+            pass # No zeros found, continue without any action
         else:
+            # Iterate through elements in row_one
             for element in row_one:
+                # Check if the element is 0
                 if element == 0:    
-                    return_count(row_one)
+                    return_count(row_one) # Count zeros in row_one
                 else:
-                    pass
-            x1_count = self.zero_count
+                    pass # Non-zero element, continue iteration
+            x1_count = self.zero_count # Store the count of zeros in x1_count
+        
+        # Check if 0 is not in row_two
         if 0 not in row_two:
-            pass
+            pass # No zeros found, continue without any action
         else:
+            # Iterate through elements in row_two
             for element in row_two:
+                # Check if the element is 0
                 if element == 0:
-                    return_count(row_two)
+                    return_count(row_two) # Count zeros in row_two
                 else:
-                    pass
-            x2_count = self.zero_count
+                    pass # Non-zero element, continue iteration
+            x2_count = self.zero_count # Store the count of zeros in x2_count
+        
+        # Compare the counts of zeros and perform row swaps
         if x1_count == None:
             # insert seperate logic for row operations
             pass
@@ -57,6 +67,7 @@ class Gaussian:
             pass
         else:
             try:
+                # Compare x1_count and x2_count to determine row swaps
                 if x1_count <= x2_count:
                     row_one, row_two = row_two, row_one
                 else:
